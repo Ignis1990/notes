@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Создание заметки</title>
+{% endblock %}
+
+{% block content %}
+    <h3>Создание заметки</h3>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            {{ field.label }}
+            {{ field }}
+        {% endfor %}
+        <button type="submit">Создать заметку</button>
+    </form>
+{% endblock %}
+
+
+<!--<form>-->
+<!--    <label>Название заметки-->
+<!--        <textarea placeholder="Введите текст"></textarea>-->
+<!--    </label>-->
+<!--    <label>Заголовок заметки-->
+<!--        <textarea placeholder="Введите текст"></textarea>-->
+<!--    </label>-->
+<!--    <label>Описание заметки-->
+<!--        <textarea placeholder="Введите текст"></textarea>-->
+<!--    </label>-->
+<!--</form>-->

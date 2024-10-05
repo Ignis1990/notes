@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Заметка</title>
+{% endblock %}
+
+{% block content-header %}
+  <a href="/update/{{ note.pk }}" class="button btn-update">Обновить заметку</a>
+  <a href="#" class="button btn-delete">Удалить заметку</a>
+{% endblock %}
+
+{% block content %}
+    <h3>{{  note.title  }}</h3>
+    <p>{{  note.description  }}</p>
+    <p>{{  note.created_at  }}</p>
+{% endblock %}
